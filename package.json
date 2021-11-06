@@ -4,9 +4,15 @@
   "main": "index.js",
   "repository": "https://github.com/lucassum/vhf-distance-backend.git",
   "author": "Lucas Jórdan <lucasjordandt@gmail.com>",
+  "scripts": {
+    "start": "node index.js"
+  },
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1"
+  },
+  "engines": {
+    "node": "15.14.0"
   }
 }

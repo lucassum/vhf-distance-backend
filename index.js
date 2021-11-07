@@ -8,11 +8,12 @@ const antennas = []
 
 app.use(cors())
 app.use(morgan('dev'))
-app.get('/', (req, res) => 'teste')
+app.use(express.json())
+app.get('/', (req, res) => res.json(antennas))
 
 app.post('/', (req, res) => {
     antennas.push(req.body)
-    return antennas;
+    res.status(201).json(antennas)
 })
 
 

@@ -12,9 +12,11 @@ app.use(express.json())
 app.get('/', (req, res) => res.json(antennas))
 
 app.post('/', (req, res) => {
-    antennas.push(req.body)
+    const { height } = req.body
+    const distance = Math.sqrt(12.76 * Number(height))
+    antennas.push({ ...req.body, distance })
     res.status(201).json(antennas)
 })
 
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Listening on port ${port}!`))
